@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function Stream() {
   const [streamerData, setStreamerData] = useState(null);
+  const [thumbnailURL, setThumbnailURL] = useState(null);
   const size = {
     width: 500,
     height: 300,
@@ -30,18 +31,22 @@ export default function Stream() {
         streamerData.streams.map((stream) => (
           <div
             className="card flex flex-col justify-between border border-black shadow-black shadow-xl "
-            style={{ width: "500px", height: "300px" }}
+            style={{
+              width: "500px",
+              height: "300px",
+              backgroundImage: `url(${stream.thumbnailUrl})`,
+            }}
           >
             <p>{stream.title}</p>
-            <div className="flex justify-between">
-              <p>Viewers: {stream.viewers}</p>
-              <p>Language: {stream.language}</p>
+            <div className="flex justify-between bg-black/50">
+              <p>VIEWERS: {stream.viewers}</p>
+              <p>LANGUAGE: {stream.language}</p>
               <a
-                className=" bg-blue-500 px-2"
+                className=" bg-red-600/40 rounded-lg px-2"
                 href={stream.url}
                 target="_blank"
               >
-                LINK
+                WATCH STREAM
               </a>
             </div>
           </div>
