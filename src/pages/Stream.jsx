@@ -29,19 +29,21 @@ export default function Stream() {
       {streamerData &&
         streamerData.streams.map((stream) => (
           <div
-            className="card border border-white"
+            className="card flex flex-col justify-between border border-black shadow-black shadow-xl "
             style={{ width: "500px", height: "300px" }}
           >
             <p>{stream.title}</p>
-            <p>Viewers: {stream.viewers}</p>
-            <p>Language: {stream.language}</p>
-            <a
-              className="border border-red-600"
-              href={stream.url}
-              target="_blank"
-            >
-              LINK
-            </a>
+            <div className="flex justify-between">
+              <p>Viewers: {stream.viewers}</p>
+              <p>Language: {stream.language}</p>
+              <a
+                className=" bg-blue-500 px-2"
+                href={stream.url}
+                target="_blank"
+              >
+                LINK
+              </a>
+            </div>
           </div>
         ))}
     </div>
