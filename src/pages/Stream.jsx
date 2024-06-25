@@ -3,11 +3,16 @@ import { useState } from "react";
 
 export default function Stream() {
   const [streamerData, setStreamerData] = useState(null);
-  const [thumbnailURL, setThumbnailURL] = useState(null);
   const size = {
     width: 500,
     height: 300,
   };
+
+  function fixThumbNailURL(url) {
+    url = url.replace("{width}", "500");
+    url = url.replace("{height}", "300");
+    return url;
+  }
 
   async function fetchData() {
     try {
@@ -34,15 +39,15 @@ export default function Stream() {
             style={{
               width: "500px",
               height: "300px",
-              backgroundImage: `url(${stream.thumbnailUrl})`,
+              backgroundImage: `url(${fixThumbNailURL(stream.thumbnailUrl)})`,
             }}
           >
             <p>{stream.title}</p>
-            <div className="flex justify-between bg-black/50">
+            <div className="flex justify-between bg-black/60">
               <p>VIEWERS: {stream.viewers}</p>
               <p>LANGUAGE: {stream.language}</p>
               <a
-                className=" bg-red-600/40 rounded-lg px-2"
+                className=" bg-red-600/40 hover:bg-yellow-700/70 rounded-xl px-2"
                 href={stream.url}
                 target="_blank"
               >
