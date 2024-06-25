@@ -22,8 +22,12 @@ export default function Player() {
         `https://api.truckyapp.com/v2/steam/resolveVanityUrl?username=${playerName}`
       );
       const data = await response.json();
-      setPlayerData(data.response.playerInfo);
-      setNoPLayer(false);
+      if (data.response.found) {
+        setPlayerData(data.response.playerInfo);
+        setNoPLayer(false);
+      } else {
+        setNoPLayer(true);
+      }
     } catch (err) {
       console.error(err);
       setNoPLayer(true);
