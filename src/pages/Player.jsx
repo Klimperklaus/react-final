@@ -46,13 +46,13 @@ export default function Player() {
         <input
           type="text"
           id="playerName"
-          className="h-10 text-xl text-center font-bold bg-white/30 shadow-2xl shadow-black"
+          className="h-10 text-xl text-center font-bold bg-white/30 border border-black shadow-2xl shadow-black"
           placeholder="Type in player name..."
           onChange={(e) => {
             setPlayerName(e.target.value);
           }}
         />
-        <button className="border p-2 bg-red-600/40 border-white rounded-lg hover:bg-yellow-700/70 active:scale-90">
+        <button className="border p-2 bg-red-600/40 border-black rounded-lg hover:bg-yellow-700/70 active:scale-90">
           SEARCH
         </button>
       </form>
