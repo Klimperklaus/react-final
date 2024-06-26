@@ -68,12 +68,12 @@ export default function Server() {
         </table>
       </div>
       <div className="mt-10">
-        <div className="border rounded-2xl flex items-center flex-col shadow-lg shadow-white/15">
+        <div className="border border-white/25 rounded-2xl flex items-center flex-col shadow-lg shadow-white/15">
           <h1
             className={
               loading
-                ? "wait border-b p-2 rounded-xl"
-                : "update border-b p-2 rounded-xl"
+                ? "wait border-b-2 border-white/25 p-2 rounded-xl"
+                : "update border-b-2 border-white/25 p-2 rounded-xl"
             }
           >
             <b>{text}</b>

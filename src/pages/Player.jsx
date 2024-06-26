@@ -60,14 +60,15 @@ export default function Player() {
           SEARCH
         </button>
       </form>
-      <div className="flex justify-center mt-10 gap-0 shadow-lg shadow-white/15 border border-black">
+      <div className="flex justify-center mt-10 gap-0 shadow-lg shadow-white/15 border-4 border-white/25 rounded-xl border-double">
         <img
           src={noPlayer ? defaultUserImg : playerData && playerData.avatarfull}
           alt="avatar"
+          className="rounded-l-lg border-2 border-white/15"
           height={400}
           width={400}
         />
-        <div className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center">
           <table className="h-full text-center border-hidden">
             <tbody>
               <tr>
