@@ -38,7 +38,7 @@ export default function Server() {
   return (
     <div className="flex flex-col items-center">
       <div>
-        <table className="shadow-2xl shadow-black">
+        <table className="shadow-lg shadow-white/15">
           <thead>
             <tr>
               <th>Game</th>
@@ -68,7 +68,7 @@ export default function Server() {
         </table>
       </div>
       <div className="mt-10">
-        <div className="border rounded-2xl flex items-center flex-col shadow-2xl shadow-black">
+        <div className="border rounded-2xl flex items-center flex-col shadow-lg shadow-white/15">
           <h1
             className={
               loading

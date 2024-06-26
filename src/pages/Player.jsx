@@ -41,7 +41,7 @@ export default function Player() {
   return (
     <div className="flex flex-col justify-center items-center gap-14">
       <form
-        className="flex gap-3 justify-center items-start shadow-lg shadow-black"
+        className="flex gap-3 justify-center items-start"
         onSubmit={(e) => {
           e.preventDefault();
           fetchData();
@@ -50,17 +50,17 @@ export default function Player() {
         <input
           type="text"
           id="playerName"
-          className="h-10 text-xl text-center font-bold bg-white/30 border border-black shadow-2xl shadow-black"
+          className="h-10 text-xl text-center font-bold bg-white/30 border border-black shadow-lg shadow-white/15"
           placeholder="Type in player name..."
           onChange={(e) => {
             setPlayerName(e.target.value);
           }}
         />
-        <button className="border p-2 bg-red-600/40 border-black rounded-lg hover:bg-yellow-700/70 active:scale-90">
+        <button className="border p-2 bg-red-600/40 border-black rounded-lg hover:bg-yellow-700/70 active:scale-90 shadow-lg shadow-white/15">
           SEARCH
         </button>
       </form>
-      <div className="flex justify-center mt-10 gap-0 shadow-2xl shadow-black border border-black">
+      <div className="flex justify-center mt-10 gap-0 shadow-lg shadow-white/15 border border-black">
         <img
           src={noPlayer ? defaultUserImg : playerData && playerData.avatarfull}
           alt="avatar"
