@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import userImg from "../assets/user.png";
 import steamImg from "../assets/steam.png";
 import steamidIMG from "../assets/steamid.png";
@@ -6,7 +6,7 @@ import truckersImg from "../assets/truckersmp.png";
 import defaultUserImg from "../assets/defaultUser.png";
 
 export default function Player() {
-  const [playerName, setPlayerName] = useState(null);
+  const [playerName, setPlayerName] = useState("");
   const [playerData, setPlayerData] = useState(null);
   const [noPlayer, setNoPLayer] = useState(true);
   const defaultData = {
@@ -33,6 +33,10 @@ export default function Player() {
       setNoPLayer(true);
     }
   }
+
+  useEffect(() => {
+    document.title = "TCT - Players";
+  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center gap-14">

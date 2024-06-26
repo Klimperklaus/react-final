@@ -27,6 +27,7 @@ export default function Stream() {
   }
 
   useEffect(() => {
+    document.title = "TCT - Streams";
     fetchData();
   }, []);
 

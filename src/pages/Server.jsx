@@ -20,6 +20,7 @@ export default function Server() {
   }
 
   useEffect(() => {
+    document.title = "TCT - Servers";
     setTimeout(() => {
       setTimer(timer - 1);
       if (timer > 0) {

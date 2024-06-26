@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function Layout() {
   return (
-    <div>
+    <>
       <header>
         <Navbar />
       </header>
@@ -14,6 +14,6 @@ export default function Layout() {
       <footer>
         <Footer />
       </footer>
-    </div>
+    </>
   );
 }
