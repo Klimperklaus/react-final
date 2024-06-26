@@ -36,6 +36,7 @@ export default function Stream() {
       {streamerData &&
         streamerData.streams.map((stream) => (
           <div
+            key={stream.id}
             className="card flex flex-col justify-between border border-black shadow-white/15 shadow-lg "
             style={{
               width: "500px",
