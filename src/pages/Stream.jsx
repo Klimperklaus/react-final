@@ -3,10 +3,6 @@ import { useState } from "react";
 
 export default function Stream() {
   const [streamerData, setStreamerData] = useState(null);
-  const size = {
-    width: 500,
-    height: 300,
-  };
 
   function fixThumbNailURL(url) {
     url = url.replace("{width}", "500");
@@ -57,7 +53,7 @@ export default function Stream() {
                 </span>
               </p>
               <a
-                className=" bg-red-600/60 hover:bg-yellow-700/70 rounded-br-lg rounded-sm px-2"
+                className=" bg-red-600/60 hover:bg-yellow-700/70 hover:shadow-lg rounded-br-lg rounded-sm px-2"
                 href={stream.url}
                 target="_blank"
               >

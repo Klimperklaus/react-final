@@ -27,24 +27,25 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 items-center">
-      <div className=" w-3/4 h-2/3 bg-white/5 rounded-2xl p-5 text-center shadow-lg shadow-white/15">
+    <div className="flex flex-col gap-6 items-center">
+      <div className=" w-3/4 h-1/2 bg-white/5 rounded-2xl p-5 text-center shadow-lg shadow-white/15 mt-3">
         <h1 className="newsHeader pb-4">NEWS</h1>
         <hr />
-        <p className="pt-3 pb-3 text-justify">
+        <p className="pt-3 pb-3 text-justify h-5/6 pr-2 overflow-auto">
           {newsData && newsData[0].description}
         </p>
         <hr />
       </div>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex h-1/2 gap-2 w-2/3 overflow-auto shadow-xl shadow-white/50">
         {galleryData &&
           galleryData.gallery.map((img) => (
             <img
               key={img.id}
               src={img.fullImageUrl}
+              className="border-8 border-white/15 border-double rounded-2xl"
               alt="image"
               height={300}
-              width={500}
+              width={600}
             />
           ))}
       </div>
