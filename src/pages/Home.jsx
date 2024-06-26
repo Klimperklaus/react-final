@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-10 items-center">
-      <div className=" w-3/4 h-2/3 bg-white/5 rounded-2xl p-5 text-center">
+      <div className=" w-3/4 h-2/3 bg-white/5 rounded-2xl p-5 text-center shadow-lg shadow-white/15">
         <h1 className="newsHeader pb-4">NEWS</h1>
         <hr />
         <p className="pt-3 pb-3 text-justify">
