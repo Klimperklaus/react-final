@@ -204,13 +204,14 @@ footer {
   background-color: rgb(255 255 255 / 0.15);
 }
 
-/* Home.jsx */
-.newsHeader {
-  font-family: bambu;
-}
-
+/* Stream.jsx */
 .streamLink:hover {
   box-shadow: #fff 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px,
     red 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   background: #ecefcf;
+}
+
+/* Home.jsx */
+.newsHeader {
+  font-family: bambu;
 }
