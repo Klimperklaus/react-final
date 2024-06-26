@@ -90,7 +90,7 @@ export default function Player() {
                     ? defaultData.steamUrl
                     : playerData && (
                         <a
-                          className="text-green-500 hover:underline hover:text-red-400"
+                          className="playerLink text-green-500 hover:underline hover:text-red-400"
                           href={playerData.profileurl}
                           target="_blank"
                         >

@@ -31,7 +31,7 @@ export default function Home() {
       <div className=" w-3/4 h-1/2 bg-white/5 border border-black rounded-2xl p-5 text-center shadow-lg shadow-white/15 mt-3">
         <h1 className="newsHeader pb-4">NEWS</h1>
         <hr />
-        <p className="pt-3 pb-3 text-justify h-5/6 pr-2 overflow-auto">
+        <p className="pt-2 pb-2 text-justify h-5/6 pr-2 overflow-auto">
           {newsData && newsData[0].description}
         </p>
         <hr />

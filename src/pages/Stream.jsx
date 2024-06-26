@@ -33,15 +33,17 @@ export default function Stream() {
         streamerData.streams.map((stream) => (
           <div
             key={stream.id}
-            className="card flex flex-col justify-between border border-black shadow-white/15 shadow-lg rounded-xl"
+            className="card flex flex-col justify-between border-2 border-white/15 shadow-white/15 shadow-lg rounded-xl"
             style={{
               width: "500px",
               height: "300px",
               backgroundImage: `url(${fixThumbNailURL(stream.thumbnailUrl)})`,
             }}
           >
-            <p className=" bg-black/70 rounded-t-xl px-2">{stream.title}</p>
-            <div className="flex justify-between bg-black/70 rounded-b-xl">
+            <p className=" bg-black/70 rounded-t-xl px-2 border-b-2 border-white/15">
+              {stream.title}
+            </p>
+            <div className="flex justify-between bg-black/70 rounded-b-xl border-t-2 border-white/15">
               <p className="bg-purple-700/60 rounded-bl-xl rounded-sm px-2">
                 VIEWERS:{" "}
                 <span className="font-extrabold">{stream.viewers}</span>
@@ -53,7 +55,7 @@ export default function Stream() {
                 </span>
               </p>
               <a
-                className=" bg-red-600/60 hover:bg-yellow-700/70 hover:shadow-lg rounded-br-lg rounded-sm px-2"
+                className="streamLink bg-red-600/60 hover:bg-yellow-700/70 rounded-br-lg rounded-sm px-2"
                 href={stream.url}
                 target="_blank"
               >
