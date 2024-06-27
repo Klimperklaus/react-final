@@ -81,7 +81,7 @@ export default function Server() {
           <ClockLoader
             className="mt-2 mb-2"
             color="#6040fa"
-            speedMultiplier={0.1}
+            speedMultiplier={0.4}
             loading={loading}
           />
         </div>

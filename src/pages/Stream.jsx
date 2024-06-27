@@ -29,6 +29,14 @@ export default function Stream() {
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
+      <div className=" w-3/4 flex justify-center text-center mt-2 sticky top-0">
+        <h1 className="streamCount text-3xl p-5 border-4 rounded-2xl border-white/10 bg-white/5 w-3/4 font-extrabold">
+          Streams total :
+          <span className="streamCountSpan font-extrabold font-mono p-5">
+            {streamerData && streamerData.total}
+          </span>
+        </h1>
+      </div>
       {streamerData &&
         streamerData.streams.map((stream) => (
           <div

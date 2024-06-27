@@ -27,7 +27,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-6 w-full items-center">
+    <div className="flex items-center flex-col gap-6 w-full">
       <div className=" w-3/4 h-1/2 bg-white/5 border border-black rounded-2xl p-5 text-center shadow-lg shadow-white/15 mt-3">
         <h1 className="newsHeader pb-4">NEWS</h1>
         <hr />
@@ -42,7 +42,7 @@ export default function Home() {
             <img
               key={img.id}
               src={img.fullImageUrl}
-              className="border-4 border-white/15 border-double rounded-t-2xl"
+              className="border-4 border-white/30 border-double rounded-t-2xl"
               alt="image"
               height={300}
               width={600}
