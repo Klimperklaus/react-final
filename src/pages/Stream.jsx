@@ -1,14 +1,24 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
+const langArr = [];
+let viewerCount = 0;
+
+function makeLanguagesUnique(arr, lang) {
+  if (!arr.includes(lang)) {
+    arr.push(lang);
+  }
+  return arr;
+}
+
+function fixThumbNailURL(url) {
+  url = url.replace("{width}", "500");
+  url = url.replace("{height}", "300");
+  return url;
+}
+
 export default function Stream() {
   const [streamerData, setStreamerData] = useState(null);
-
-  function fixThumbNailURL(url) {
-    url = url.replace("{width}", "500");
-    url = url.replace("{height}", "300");
-    return url;
-  }
 
   async function fetchData() {
     try {
@@ -24,19 +34,34 @@ export default function Stream() {
 
   useEffect(() => {
     document.title = "TCT - Streams";
+    viewerCount = 0;
     fetchData();
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center gap-4">
-      <div className=" w-3/4 flex justify-center text-center mt-2 sticky top-0">
-        <h1 className="streamCount text-3xl p-5 border-4 rounded-2xl border-white/10 bg-white/5 w-3/4 font-extrabold">
-          Streams total :
-          <span className="streamCountSpan font-extrabold font-mono p-5">
-            {streamerData && streamerData.total}
-          </span>
+    <div className="flex flex-wrap justify-center gap-4 h-max">
+      <div className=" w-3/4 flex justify-around text-center mt-2 sticky top-0">
+        <h1 className="text-3xl p-t-5 p-b-5 font-extrabold">
+          {streamerData && streamerData.total} STREAMS IN {langArr.length}{" "}
+          LANGUAGES WITH {viewerCount} VIEWERS LIVE !
         </h1>
+        <div className="flex items-center">
+          <select
+            className="bg-blue-500/80 scale-125"
+            name="languages"
+            id="languages"
+          >
+            <option value="">--Choose your language--</option>
+          </select>
+        </div>
       </div>
+      {streamerData &&
+        streamerData.streams.forEach((stream) => {
+          {
+            makeLanguagesUnique(langArr, stream.language);
+            viewerCount += stream.viewers;
+          }
+        })}
       {streamerData &&
         streamerData.streams.map((stream) => (
           <div
