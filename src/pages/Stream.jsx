@@ -73,7 +73,7 @@ export default function Stream() {
         </h1>
         <div className="flex items-center">
           <select
-            className="bg-blue-400/60 scale-125"
+            className="bg-blue-400/60 scale-125 before:bg-black"
             name="languages"
             id="languages"
           >
