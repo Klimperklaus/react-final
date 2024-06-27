@@ -56,15 +56,24 @@ export default function Stream() {
 
   return (
     <div className="flex flex-wrap justify-center gap-4 h-max">
-      <div className=" w-3/4 flex justify-around text-center mt-2 sticky top-0">
+      <div className="stickyDiv w-3/4 flex justify-between text-center mt-2 sticky top-0 pr-8">
         <h1 className="text-3xl p-t-5 p-b-5 font-extrabold">
-          {streamerData && streamerData.total} STREAMS IN{" "}
-          {getLanguageCount(streamerData)} LANGUAGES WITH{" "}
-          {getTotalViewerCount(streamerData)} VIEWERS LIVE !
+          <span className="text-orange-500">
+            {streamerData && streamerData.total}
+          </span>{" "}
+          STREAMS IN{" "}
+          <span className="text-orange-500">
+            {getLanguageCount(streamerData)}
+          </span>{" "}
+          LANGUAGES WITH{" "}
+          <span className="text-orange-500">
+            {getTotalViewerCount(streamerData)}
+          </span>{" "}
+          VIEWERS LIVE !
         </h1>
         <div className="flex items-center">
           <select
-            className="bg-blue-500/80 scale-125"
+            className="bg-blue-400/60 scale-125"
             name="languages"
             id="languages"
           >
