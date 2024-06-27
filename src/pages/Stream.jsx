@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-const langArr = [];
-let viewerCount = 0;
-
 function makeLanguagesUnique(arr, lang) {
   if (!arr.includes(lang)) {
     arr.push(lang);
@@ -15,6 +12,26 @@ function fixThumbNailURL(url) {
   url = url.replace("{width}", "500");
   url = url.replace("{height}", "300");
   return url;
+}
+
+function getTotalViewerCount(data) {
+  if (data) {
+    let count = 0;
+    data.streams.forEach((stream) => {
+      count += stream.viewers;
+    });
+    return count;
+  }
+}
+
+function getLanguageCount(data) {
+  if (data) {
+    const langArr = [];
+    data.streams.forEach((stream) => {
+      makeLanguagesUnique(langArr, stream.language);
+    });
+    return langArr.length;
+  }
 }
 
 export default function Stream() {
@@ -34,7 +51,6 @@ export default function Stream() {
 
   useEffect(() => {
     document.title = "TCT - Streams";
-    viewerCount = 0;
     fetchData();
   }, []);
 
@@ -42,8 +58,9 @@ export default function Stream() {
     <div className="flex flex-wrap justify-center gap-4 h-max">
       <div className=" w-3/4 flex justify-around text-center mt-2 sticky top-0">
         <h1 className="text-3xl p-t-5 p-b-5 font-extrabold">
-          {streamerData && streamerData.total} STREAMS IN {langArr.length}{" "}
-          LANGUAGES WITH {viewerCount} VIEWERS LIVE !
+          {streamerData && streamerData.total} STREAMS IN{" "}
+          {getLanguageCount(streamerData)} LANGUAGES WITH{" "}
+          {getTotalViewerCount(streamerData)} VIEWERS LIVE !
         </h1>
         <div className="flex items-center">
           <select
@@ -55,13 +72,6 @@ export default function Stream() {
           </select>
         </div>
       </div>
-      {streamerData &&
-        streamerData.streams.forEach((stream) => {
-          {
-            makeLanguagesUnique(langArr, stream.language);
-            viewerCount += stream.viewers;
-          }
-        })}
       {streamerData &&
         streamerData.streams.map((stream) => (
           <div
