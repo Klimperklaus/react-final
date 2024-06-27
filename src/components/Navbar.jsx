@@ -4,10 +4,10 @@ export default function Navbar() {
   return (
     <nav className="categories text-center text-3xl p-3 border-b-4 border-zinc-400 bg-white/15">
       <ul className="flex flex-wrap items-baseline justify-center gap-10 w-full">
-        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/20 rounded-3xl">
+        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/30 border-double hover:bg-white/5 rounded-3xl">
           <NavLink to="/">Home</NavLink>
         </li>
-        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/20 rounded-3xl">
+        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/30 border-double hover:bg-white/5 rounded-3xl">
           <NavLink to="/streams">Streams</NavLink>
         </li>
         <li>
@@ -15,10 +15,10 @@ export default function Navbar() {
             TruckersMP Community Tracker
           </h1>
         </li>
-        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/20 rounded-3xl">
+        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/30 border-double hover:bg-white/5 rounded-3xl">
           <NavLink to="/players">Players</NavLink>
         </li>
-        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/20 rounded-3xl">
+        <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/30 border-double hover:bg-white/5 rounded-3xl">
           <NavLink to="/servers">Servers</NavLink>
         </li>
       </ul>
