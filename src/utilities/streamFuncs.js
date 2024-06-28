@@ -21,12 +21,12 @@ export function getTotalViewerCount(data) {
   }
 }
 
-export function getLanguageCount(data) {
+export function getLanguages(data) {
   if (data) {
     const langArr = [];
     data.streams.forEach((stream) => {
       makeLanguagesUnique(langArr, stream.language);
     });
-    return langArr.length;
+    return { length: langArr.length, names: langArr };
   }
 }

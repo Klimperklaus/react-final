@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   fixThumbNailURL,
   getTotalViewerCount,
-  getLanguageCount,
+  getLanguages,
 } from "../utilities/streamFuncs";
 
 export default function Stream() {
@@ -35,20 +35,21 @@ export default function Stream() {
           </span>{" "}
           STREAMS{" "}
           <span className="ml-6 text-orange-500">
-            {getLanguageCount(streamerData)}
+            {streamerData && getLanguages(streamerData).length}
           </span>{" "}
           LANGUAGES{" "}
           <span className="ml-6 text-orange-500">
-            {getTotalViewerCount(streamerData)}
+            {streamerData && getTotalViewerCount(streamerData)}
           </span>{" "}
           VIEWERS
         </h1>
         <div className="flex items-center">
           <select
-            className="bg-blue-400/60 scale-125"
+            className="bg-blue-400/80 scale-110 p-1"
             name="languages"
             id="languages"
           >
+            {/* TODO set select options */}
             <option value="">--Choose your language--</option>
           </select>
         </div>
