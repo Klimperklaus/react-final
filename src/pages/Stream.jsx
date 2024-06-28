@@ -1,38 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
-
-function makeLanguagesUnique(arr, lang) {
-  if (!arr.includes(lang)) {
-    arr.push(lang);
-  }
-  return arr;
-}
-
-function fixThumbNailURL(url) {
-  url = url.replace("{width}", "500");
-  url = url.replace("{height}", "300");
-  return url;
-}
-
-function getTotalViewerCount(data) {
-  if (data) {
-    let count = 0;
-    data.streams.forEach((stream) => {
-      count += stream.viewers;
-    });
-    return count;
-  }
-}
-
-function getLanguageCount(data) {
-  if (data) {
-    const langArr = [];
-    data.streams.forEach((stream) => {
-      makeLanguagesUnique(langArr, stream.language);
-    });
-    return langArr.length;
-  }
-}
+import {
+  fixThumbNailURL,
+  getTotalViewerCount,
+  getLanguageCount,
+} from "../utilities/streamFuncs";
 
 export default function Stream() {
   const [streamerData, setStreamerData] = useState(null);
@@ -61,15 +33,15 @@ export default function Stream() {
           <span className="text-orange-500">
             {streamerData && streamerData.total}
           </span>{" "}
-          STREAMS IN{" "}
-          <span className="text-orange-500">
+          STREAMS{" "}
+          <span className="ml-6 text-orange-500">
             {getLanguageCount(streamerData)}
           </span>{" "}
-          LANGUAGES WITH{" "}
-          <span className="text-orange-500">
+          LANGUAGES{" "}
+          <span className="ml-6 text-orange-500">
             {getTotalViewerCount(streamerData)}
           </span>{" "}
-          VIEWERS LIVE !
+          VIEWERS
         </h1>
         <div className="flex items-center">
           <select
