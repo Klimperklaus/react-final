@@ -43,14 +43,17 @@ export default function Stream() {
           </span>{" "}
           VIEWERS
         </h1>
-        <div className="flex items-center">
+        <div className="flex justify-center items-center">
           <select
-            className="bg-blue-400/80 scale-110 p-1"
+            className="bg-blue-400/80 scale-110 p-1 text-center font-extrabold"
             name="languages"
             id="languages"
           >
-            {/* TODO set select options */}
             <option value="">--Choose your language--</option>
+            {streamerData &&
+              getLanguages(streamerData).names.map((name) => (
+                <option value={name}>{name.toUpperCase()}</option>
+              ))}
           </select>
         </div>
       </div>
