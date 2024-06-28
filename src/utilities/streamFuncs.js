@@ -31,3 +31,21 @@ export function getLanguages(data) {
     return { length: langArr.length, names: langArr };
   }
 }
+
+export function sortStreams(data, langSelection) {
+  const streamsArr = [];
+  if (data) {
+    if (langSelection === "all") {
+      data.streams.forEach((stream) => {
+        streamsArr.push(stream);
+      });
+    } else {
+      data.streams.forEach((stream) => {
+        if (stream.language.includes(langSelection)) {
+          streamsArr.push(stream);
+        }
+      });
+    }
+    return streamsArr;
+  }
+}

@@ -4,10 +4,14 @@ import {
   fixThumbNailURL,
   getTotalViewerCount,
   getLanguages,
+  sortStreams,
 } from "../utilities/streamFuncs";
 
 export default function Stream() {
   const [streamerData, setStreamerData] = useState(null);
+  const [selected, setSelected] = useState("all");
+  const [streams, setStreams] = useState([]);
+  const [initial, setInitial] = useState(true);
 
   async function fetchData() {
     try {
@@ -16,6 +20,9 @@ export default function Stream() {
       );
       const data = await response.json();
       setStreamerData(data.response);
+      if (initial) {
+        setStreams(data.response.streams);
+      }
     } catch (err) {
       console.error(err);
     }
@@ -24,7 +31,7 @@ export default function Stream() {
   useEffect(() => {
     document.title = "TCT - Streams";
     fetchData();
-  }, []);
+  }, [selected]);
 
   return (
     <div className="flex flex-wrap justify-center gap-4 h-max">
@@ -48,17 +55,27 @@ export default function Stream() {
             className="bg-blue-400/80 scale-110 p-1 text-center font-extrabold"
             name="languages"
             id="languages"
+            value={selected}
+            onChange={(e) => {
+              setSelected(e.target.value);
+              setStreams(sortStreams(streamerData, e.target.value));
+              setInitial(false);
+            }}
           >
-            <option value="">--Choose your language--</option>
+            <option key="all" value="all">
+              ALL LANGUAGES
+            </option>
             {streamerData &&
               getLanguages(streamerData).names.map((name) => (
-                <option value={name}>{name.toUpperCase()}</option>
+                <option key={name} value={name}>
+                  {name.toUpperCase()}
+                </option>
               ))}
           </select>
         </div>
       </div>
       {streamerData &&
-        streamerData.streams.map((stream) => (
+        streams.map((stream) => (
           <div
             key={stream.id}
             className="card flex flex-col justify-between border-2 border-white/15 shadow-white/15 shadow-lg rounded-xl"
