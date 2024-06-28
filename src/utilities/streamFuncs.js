@@ -27,6 +27,7 @@ export function getLanguages(data) {
     data.streams.forEach((stream) => {
       makeLanguagesUnique(langArr, stream.language);
     });
+    langArr.sort();
     return { length: langArr.length, names: langArr };
   }
 }
