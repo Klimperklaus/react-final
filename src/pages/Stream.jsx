@@ -35,7 +35,7 @@ export default function Stream() {
 
   return (
     <div className="flex flex-wrap justify-center gap-4 h-max">
-      <div className="stickyDiv w-3/4 flex justify-between text-center mt-2 sticky top-0 pr-8">
+      <div className="w-3/4 flex justify-between text-center mt-2 sticky top-0 pr-8">
         <h1 className="text-3xl p-t-5 p-b-5 font-extrabold">
           <span className="text-orange-500">
             {streamerData && streamerData.total}
@@ -52,10 +52,9 @@ export default function Stream() {
         </h1>
         <div className="flex justify-center items-center">
           <select
-            className="bg-blue-400/80 scale-110 p-1 text-center font-extrabold"
+            className="bg-blue-400/80 p-1 text-center font-extrabold border-transparent border-4 hover:border-white/80 "
             name="languages"
             id="languages"
-            value={selected}
             onChange={(e) => {
               setSelected(e.target.value);
               setStreams(sortStreams(streamerData, e.target.value));
