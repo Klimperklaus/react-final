@@ -12,7 +12,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" index element={<Home />} />
           <Route path="/servers" element={<Server />} />
           <Route path="/players" element={<Player />} />
           <Route path="/streams" element={<Stream />} />

@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="categories text-center text-3xl p-3 border-b-4 border-zinc-400 bg-white/15">
       <ul className="flex flex-wrap items-baseline justify-center gap-10 w-full">
         <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/30 border-double hover:bg-white/5 rounded-3xl">
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/home">Home</NavLink>
         </li>
         <li className="nav-links border-transparent border-b-4 border-t-4 border-l-2 border-r-2 hover:border-zinc-300/30 border-double hover:bg-white/5 rounded-3xl">
           <NavLink to="/streams">Streams</NavLink>
