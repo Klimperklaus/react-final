@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { ClockLoader } from "react-spinners";
+import yesImg from "../assets/yes.png";
+import noImg from "../assets/no.png";
 
 export default function Server() {
   const [serverData, setServerData] = useState(null);
@@ -41,10 +43,13 @@ export default function Server() {
         <table className="shadow-lg shadow-white/15">
           <thead>
             <tr>
-              <th>Game</th>
-              <th>Server</th>
-              <th>Player</th>
-              <th>Status</th>
+              <th>GAME</th>
+              <th>SERVER</th>
+              <th>PLAYER</th>
+              <th>PLAYER COLLISION</th>
+              <th>AFK ALLOWED</th>
+              <th>CARS ALLOWED</th>
+              <th>STATUS</th>
             </tr>
           </thead>
           <tbody>
@@ -55,6 +60,27 @@ export default function Server() {
                     <td key={"game" + i}>{server.game}</td>
                     <td key={"name" + i}>{server.name}</td>
                     <td key={"players" + i}>{server.players}</td>
+                    <td key={"collisions" + i}>
+                      {server.collisions ? (
+                        <img src={yesImg} alt="yes" />
+                      ) : (
+                        <img src={noImg} alt="no" />
+                      )}
+                    </td>
+                    <td key={"afk" + i}>
+                      {server.afkenabled ? (
+                        <img src={yesImg} alt="yes" />
+                      ) : (
+                        <img src={noImg} alt="no" />
+                      )}
+                    </td>
+                    <td key={"playercars" + i}>
+                      {server.carsforplayers ? (
+                        <img src={yesImg} alt="yes" />
+                      ) : (
+                        <img src={noImg} alt="no" />
+                      )}
+                    </td>
                     <td
                       className={server.online ? "online" : "offline"}
                       key={"status" + i}

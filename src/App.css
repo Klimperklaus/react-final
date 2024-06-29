@@ -196,3 +196,7 @@ footer {
 .newsHeader {
   font-family: bambu;
 }
+
+img {
+  margin: 0 auto;
+}
