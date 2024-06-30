@@ -69,9 +69,9 @@ export default function Server() {
                     </td>
                     <td key={"afk" + i}>
                       {server.afkenabled ? (
-                        <img src={yesImg} alt="yes" />
+                        <img src={noImg} alt="yes" />
                       ) : (
-                        <img src={noImg} alt="no" />
+                        <img src={yesImg} alt="no" />
                       )}
                     </td>
                     <td key={"playercars" + i}>
