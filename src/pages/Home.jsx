@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 
 export default function Home() {
   const [galleryData, setGalleryData] = useState(null);
@@ -22,7 +22,13 @@ export default function Home() {
   }
 
   useEffect(() => {
-    document.title = "TCT - Home";
+    if (!document.title.includes("Home")) {
+      document.title = "TCT - Home";
+    }
+    if (!document.head.innerHTML.includes("description")) {
+      document.head.innerHTML +=
+        '<meta name="description" content="Welcome page with fresh news from TruckersMP RSS feed and a slide show showing random Trucks.">';
+    }
     fetchData();
   }, []);
 

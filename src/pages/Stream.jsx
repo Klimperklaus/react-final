@@ -29,7 +29,13 @@ export default function Stream() {
   }
 
   useEffect(() => {
-    document.title = "TCT - Streams";
+    if (!document.title.includes("Streams")) {
+      document.title = "TCT - Streams";
+    }
+    if (!document.head.innerHTML.includes("description")) {
+      document.head.innerHTML +=
+        '<meta name="description" content="Showing live twitch streams for the game Euro Truck Simulator 2 as cards with viewer count, used language, stream title and a link to the stream. Users can sort streams by language and the page shows the total number of active streams, number of all used languages and the number of total viewers">';
+    }
     fetchData();
   }, [selected]);
 

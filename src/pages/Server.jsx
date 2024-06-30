@@ -22,7 +22,13 @@ export default function Server() {
   }
 
   useEffect(() => {
-    document.title = "TCT - Servers";
+    if (!document.title.includes("Servers")) {
+      document.title = "TCT - Servers";
+    }
+    if (!document.head.innerHTML.includes("description")) {
+      document.head.innerHTML +=
+        '<meta name="description" content="Updates Server information for TruckersMP Servers each 20 seconds, schown as HTML Table">';
+    }
     setTimeout(() => {
       setTimer(timer - 1);
       if (timer > 0) {
@@ -69,9 +75,9 @@ export default function Server() {
                     </td>
                     <td key={"afk" + i}>
                       {server.afkenabled ? (
-                        <img src={noImg} alt="yes" />
+                        <img src={noImg} alt="no" />
                       ) : (
-                        <img src={yesImg} alt="no" />
+                        <img src={yesImg} alt="yes" />
                       )}
                     </td>
                     <td key={"playercars" + i}>

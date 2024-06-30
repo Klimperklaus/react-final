@@ -5,7 +5,7 @@ function Pnf() {
     document.title = "TCT - Page not found";
   }, []);
 
-  return <div>Page not found ...</div>;
+  return <h1>Page not found ...</h1>;
 }
 
 export default Pnf;

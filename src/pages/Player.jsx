@@ -35,7 +35,13 @@ export default function Player() {
   }
 
   useEffect(() => {
-    document.title = "TCT - Players";
+    if (!document.title.includes("Players")) {
+      document.title = "TCT - Players";
+    }
+    if (!document.head.innerHTML.includes("description")) {
+      document.head.innerHTML +=
+        '<meta name="description" content="User can search for a specific player via steam name. Shown results are steam user name, steam id with link to steam user profile, steam id and truckersMP id.">';
+    }
   }, []);
 
   return (
