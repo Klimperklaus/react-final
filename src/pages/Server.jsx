@@ -28,6 +28,7 @@ export default function Server() {
     if (!document.head.innerHTML.includes("description")) {
       document.head.innerHTML +=
         '<meta name="description" content="Updates Server information for TruckersMP Servers each 20 seconds, schown as HTML Table">';
+    } else {
     }
     setTimeout(() => {
       setTimer(timer - 1);

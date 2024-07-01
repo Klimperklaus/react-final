@@ -62,6 +62,7 @@ body {
     0 0 10px rgba(255, 253, 247, 0.8), 0 0 15px rgba(255, 253, 247, 0.8),
     0 0 20px rgba(255, 253, 247, 0.8), 0 0 30px rgba(255, 253, 247, 0.8),
     0 0 40px rgba(255, 253, 247, 0.8), 0 0 50px rgba(255, 253, 247, 0.8);
+  -webkit-text-stroke: 1px black;
 }
 
 table,
