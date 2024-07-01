@@ -50,25 +50,25 @@ export default function Server() {
         <table className="shadow-lg shadow-white/15">
           <thead>
             <tr>
-              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+              <th className=" table-head font-extrabold text-yellow-300/80 bg-white/15 ">
                 GAME
               </th>
-              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+              <th className=" table-head font-extrabold text-yellow-300/80 bg-white/15">
                 SERVER
               </th>
-              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+              <th className=" table-head font-extrabold text-yellow-300/80 bg-white/15">
                 PLAYER
               </th>
-              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+              <th className=" table-head font-extrabold text-yellow-300/80 bg-white/15">
                 PLAYER COLLISION
               </th>
-              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+              <th className=" table-head font-extrabold text-yellow-300/80 bg-white/15">
                 AFK ALLOWED
               </th>
-              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+              <th className="table-head font-extrabold text-yellow-300/80 bg-white/15">
                 CARS ALLOWED
               </th>
-              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+              <th className="table-head font-extrabold text-yellow-300/80 bg-white/15">
                 STATUS
               </th>
             </tr>

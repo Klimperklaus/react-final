@@ -58,11 +58,12 @@ body {
 }
 
 .table-head {
-  text-shadow: 0 0 5px rgba(255, 253, 247, 0.8),
-    0 0 10px rgba(255, 253, 247, 0.8), 0 0 15px rgba(255, 253, 247, 0.8),
-    0 0 20px rgba(255, 253, 247, 0.8), 0 0 30px rgba(255, 253, 247, 0.8),
-    0 0 40px rgba(255, 253, 247, 0.8), 0 0 50px rgba(255, 253, 247, 0.8);
+  text-shadow: 0 0 5px rgba(202, 138, 4, 0.8), 0 0 10px rgba(202, 138, 4, 0.8),
+    0 0 15px rgba(202, 138, 4, 0.8), 0 0 20px rgba(202, 138, 4, 0.8),
+    0 0 30px rgba(202, 138, 4, 0.8), 0 0 40px rgba(255, 253, 247, 0.8),
+    0 0 50px rgba(255, 253, 247, 0.8);
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+  font-size: larger;
 }
 
 table,
