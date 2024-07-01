@@ -49,20 +49,37 @@ export default function Server() {
         <table className="shadow-lg shadow-white/15">
           <thead>
             <tr>
-              <th>GAME</th>
-              <th>SERVER</th>
-              <th>PLAYER</th>
-              <th>PLAYER COLLISION</th>
-              <th>AFK ALLOWED</th>
-              <th>CARS ALLOWED</th>
-              <th>STATUS</th>
+              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+                GAME
+              </th>
+              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+                SERVER
+              </th>
+              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+                PLAYER
+              </th>
+              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+                PLAYER COLLISION
+              </th>
+              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+                AFK ALLOWED
+              </th>
+              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+                CARS ALLOWED
+              </th>
+              <th className="table-head font-extrabold text-yellow-600/80 bg-white/20">
+                STATUS
+              </th>
             </tr>
           </thead>
           <tbody>
             {serverData &&
               serverData.response.servers.map((server, i) => {
                 return (
-                  <tr className="text-center" key={"game-tr" + i}>
+                  <tr
+                    className="text-center font-extrabold"
+                    key={"game-tr" + i}
+                  >
                     <td key={"game" + i}>{server.game}</td>
                     <td key={"name" + i}>{server.name}</td>
                     <td key={"players" + i}>{server.players}</td>
