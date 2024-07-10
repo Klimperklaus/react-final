@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import userImg from "../assets/user.png";
 import steamImg from "../assets/steam.png";
 import steamidIMG from "../assets/steamid.png";
@@ -6,6 +6,7 @@ import truckersImg from "../assets/truckersmp.png";
 import defaultUserImg from "../assets/defaultUser.png";
 
 export default function Player() {
+  const player = useRef();
   const [playerName, setPlayerName] = useState("");
   const [playerData, setPlayerData] = useState(null);
   const [noPlayer, setNoPLayer] = useState(true);
@@ -19,7 +20,7 @@ export default function Player() {
   async function fetchData() {
     try {
       const response = await fetch(
-        `https://api.truckyapp.com/v2/steam/resolveVanityUrl?username=${playerName}`
+        `https://api.truckyapp.com/v2/steam/resolveVanityUrl?username=${playerName}`,
       );
       const data = await response.json();
       if (data.response.found) {
@@ -58,11 +59,12 @@ export default function Player() {
           id="playerName"
           className="h-10 text-xl text-center font-bold bg-white/30 border border-black shadow-lg shadow-white/15"
           placeholder="Type in player name..."
-          onChange={(e) => {
-            setPlayerName(e.target.value);
-          }}
+          ref={player}
         />
-        <button className="border p-2 bg-red-600/40 border-black rounded-lg hover:bg-yellow-700/70 active:scale-90 shadow-lg shadow-white/15">
+        <button
+          className="border p-2 bg-red-600/40 border-black rounded-lg hover:bg-yellow-700/70 active:scale-90 shadow-lg shadow-white/15"
+          onClick={() => setPlayerName(player.current.value)}
+        >
           SEARCH
         </button>
       </form>
